@@ -1,11 +1,17 @@
 <h1><%= @category.name %></h1>
 
+
 <ul>
   <% @articles.each do |article| %>
 
-      <li><%= link_to article.title, category_article_path(article) %></li>
+      <li><%= link_to article.title, category_article_path(@category, article) %></li>
 
   <% end %>
 </ul>
 
+
+<%= link_to 'Back', categories_path %> |
 <%= link_to 'Edit Category Name', edit_category_path %>
+
+
+
