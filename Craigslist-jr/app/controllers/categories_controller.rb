@@ -5,10 +5,22 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @category = Category.new
+  end
+
+  def show
+    @category = Category.find_by(id: params[:id])
+    @articles = @category.articles
   end
 
   def create
     @category = Category.new(category_params)
+
+    if @category.save
+      redirect_to @category
+    else
+      render 'new'
+    end
   end
 
   private
