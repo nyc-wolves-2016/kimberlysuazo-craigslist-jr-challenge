@@ -1,0 +1,12 @@
+
+
+<h2>Add a new listing:</h2>
+
+<% if @article_key %>
+  <h2>IMPORTANT!! The link to edit your article is:</h2>
+  <p> http://localhost:3000/categories/<%= @category.id %>/articles/<%= @article.id %>/edit?key=<%= @article_key %> </p>
+  <%= link_to 'Go to your article', category_article_path(@category, @article) %>
+
+<% end %>
+
+<%= render 'form' %>

@@ -2,8 +2,17 @@
 
 <ul>
   <% @articles.each do |article| %>
-    <%= link_to category_article_path(article) do  %>
-      <li><%= article.title %></li>
-    <% end %>
+
+      <li><%= link_to article.title, category_article_path(@category, article) %></li>
+
   <% end %>
 </ul>
+
+
+
+<%= link_to 'Back', categories_path %> |
+<%= link_to 'Edit Category Name', edit_category_path %> |
+<%= link_to 'Add New Listing', new_category_article_path(@category) %>
+
+
+

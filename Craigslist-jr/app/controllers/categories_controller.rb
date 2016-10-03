@@ -13,6 +13,10 @@ class CategoriesController < ApplicationController
     @articles = @category.articles
   end
 
+  def edit
+    @category = Category.find_by(id: params[:id])
+  end
+
   def create
     @category = Category.new(category_params)
 
@@ -20,6 +24,16 @@ class CategoriesController < ApplicationController
       redirect_to @category
     else
       render 'new'
+    end
+  end
+
+  def update
+    @category = Category.find_by(id: params[:id])
+
+    if @category.update(category_params)
+      redirect_to @category
+    else
+      render 'edit'
     end
   end
 
