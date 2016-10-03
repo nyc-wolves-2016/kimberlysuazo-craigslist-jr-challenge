@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+c = Category.create!(name: "Furniture for Sale")
+a = Article.new(title:"Red sofa", content: "Moving out of town and need to get rid of this very comfy sofa. Pet/Smoke/Bed-bug -free home. $250", category_id: c.id)
