@@ -1,24 +1,28 @@
-# README
+# Craigslist Jr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Learning Competencies
 
-Things you may want to cover:
+* Build a web app using Rails
+* Use Active Record Associations
+* Implement all four parts of [CRUD][]: create, read, update, and delete.
+* Use the MVC pattern in web applications with proper allocation of code and responsibilities to each layer
 
-* Ruby version
+## Summary
 
-* System dependencies
+We're going to build a simple version of Craigslist (using Rails).
 
-* Configuration
+The application will have two core models: `Article` and `Category`.  An `Article`
+belongs to a `Category` and a `Category` has many `Articles`.
 
-* Database creation
+A `Category` is something like "Apartment Rentals" or "Auto Parts."
 
-* Database initialization
+If you're never used Craigslist, it doesn't have any kind of user
+authentication.  Instead, when someone creates an article they're given a special
+"secret" URL that grants them powers to edit that article that looks like
 
-* How to run the test suite
+```text
+http://craigslist.com/articles/123/edit?key=kjansd812
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The key is randomly generated.  The person is given their "edit URL" after they
+successfully create a article.  Anyone with this URL can edit the article.
