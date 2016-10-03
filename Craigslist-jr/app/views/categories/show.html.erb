@@ -1,6 +1,5 @@
 <h1><%= @category.name %></h1>
 
-
 <ul>
   <% @articles.each do |article| %>
 
@@ -10,11 +9,10 @@
 </ul>
 
 
-<h2>Add a new listing:</h2>
-<%= render 'articles/form' %>
 
 <%= link_to 'Back', categories_path %> |
-<%= link_to 'Edit Category Name', edit_category_path %>
+<%= link_to 'Edit Category Name', edit_category_path %> |
+<%= link_to 'Add New Listing', new_category_article_path(@category) %>
 
 
 

@@ -1,0 +1,9 @@
+
+<h1>Edit Your Listing</h1>
+
+<%= render 'form' %>
+
+
+<%= link_to 'Destroy', category_article_path(@category, @article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
