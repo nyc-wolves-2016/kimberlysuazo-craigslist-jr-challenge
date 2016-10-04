@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  before_filter :require_user
+
   def new
     @article = Article.new
     @category = Category.find_by(id: params[:category_id])
